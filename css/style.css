@@ -1,0 +1,808 @@
+/*
+Theme URI: www.michel-grillon.fr
+Author: Michel Grillon
+Author URI: www.michel-grillon.fr
+Description: Style du site michel-grillon.fr
+Version: 1.0
+*/
+
+/* Mode sombre par défaut ==============================================*/
+html {
+    border: 2px solid rgb(16, 123, 116);
+    margin: 2px;
+    padding: 2px;
+}
+
+body {
+    background: #0A192F;
+    padding: 0.313em 3.125em;
+    margin: 0 auto;
+    font-family: "Roboto", sans-serif;
+    max-width: 100%;
+    
+}
+
+body,
+a {
+    color: #fff;
+}
+
+main {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+#hero {
+    display: flex;
+    position: relative;
+    /* Espace entre les éléments */
+    justify-content: space-between;
+    /* Assure que les divs enfants ont la même hauteur */
+    align-items: stretch;
+    width: 100%;
+    z-index: 0;
+}
+
+
+/* S'assure que les div sont côte à côte sur les grands écrans */
+.container-portfolio, .test {
+    width: 50%;
+    /* Chaque div occupe environ la moitié de la largeur */
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.test {
+    display: flex;
+    flex-direction: column;
+    /* Maintien l'alignement vertical des éléments enfants */
+    background-image: url("../images/bubble.webp");
+    background-color: #0A192F;
+    background-repeat: no-repeat;
+    /* Évite la répétition de l'image */
+    background-position: center;
+    /* Centre l'image horizontalement */
+    background-size: auto 75%;
+        /* Ajuste l'image pour qu'elle occupe 75% de la hauteur du conteneur */
+    width: 100%;
+    /* Occupe toute la largeur disponible */
+    height: 100vh;
+    /* Hauteur initiale, ajustable selon vos besoins */
+    overflow: hidden;
+    /* Évite les débordements */
+    transition: height 0.5s ease;
+    /* Ajoute une transition pour la hauteur */
+    z-index: -1;
+}
+
+/* Optionnel : si vous avez besoin d'une hauteur dynamique */
+.rubrique-open .test {
+    height: 155vh;
+    /* Ajustez cette valeur selon la hauteur souhaitée */
+    background-size: auto 100%;
+        /* Étire l'image pour remplir la hauteur du conteneur */
+}
+
+/* Gestion ouverture suite clic formulaire */
+.d-flex {
+    display: flex;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.toggle-icon {
+    margin-left: auto;
+}
+
+/* Style par défaut pour l'icône de la flèche */
+.toggle-icon {
+    cursor: pointer;
+    font-size: 1.5em;
+    color: rgb(16, 123, 116);
+    /* Couleur par défaut pour le thème sombre */
+    margin-left: 10px;
+}
+
+/* Style pour l'icône de la flèche en mode clair */
+.light-mode .toggle-icon {
+    color: rgb(16, 123, 116);
+    /* Couleur pour le thème clair */
+}
+
+.about-content,
+.projects-content {
+    display: none;
+    transition: all 0.3s ease;
+}
+
+/* Masquer les listes de projets par défaut */
+.project-list,
+.project-gallery {
+    display: none;
+}
+
+/* Effet de zoom sur les vignettes */
+.project-gallery img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.light-mode .project-gallery img:hover {
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+/* Animation pour les vignettes lorsqu'elles apparaissent */
+.project-gallery img {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+ a,  p {
+    color: rgb(255, 255, 255);
+}
+
+ul {
+    display: flex;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+    margin: 0 0.625em;
+    color: rgb(16, 123, 116);
+}
+
+/* Règle spécifique pour tes listes verticales */
+#techos,
+#technos2 {
+    display: block;
+    /* Rétablit le comportement par défaut des listes */
+    padding-left: 20px;
+    /* Ajoute un peu d'espace à gauche pour les puces */
+}
+
+#techos li,
+#technos2 li {
+    list-style-type: circle;
+    /* Change la forme des puces */
+    display: list-item;
+    /* Assure que chaque élément est listé */
+    margin: 0.5em 0;
+    /* Ajoute un espace vertical entre les éléments */
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 24pt;
+    text-align:left;
+    color: rgb(16, 123, 116);
+}
+
+h2 {
+    font-size: 18pt;
+    color: rgb(16, 123, 116);
+}
+
+h3 {
+    font-size: 16pt;
+    color: rgb(16, 123, 116);
+}
+
+p {
+    margin-bottom: 0;
+    margin-top: 1em;
+}
+
+i {
+        color: rgb(16, 123, 116);
+}
+
+#propos,
+#mesProjets,
+#contact {
+    border-bottom: 0.1em rgb(16, 123, 116) solid;
+    padding-top: 0.01em;
+    margin-top: 1em;
+}
+
+#submit-btn {
+    background-color: #107B74;
+    border-color: #107B74;
+    color: #fff;
+    /* Texte blanc pour contraster avec le fond */
+}
+
+#submit-btn:hover {
+    background-color: #0e6e67;
+    /* Une couleur plus foncée pour l'état survolé */
+    border-color: #0e6e67;
+}
+
+/* Appliquer l'ombre aux champs du formulaire */
+#contact-form .form-control {
+    box-shadow: 4px 4px 6px rgba(255, 255, 255, 0.2);
+    /* Ombre légère en mode sombre */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Ajouter une ombre plus marquée au survol */
+#contact-form .form-control:focus {
+    box-shadow: 6px 6px 8px rgba(255, 255, 255, 0.4);
+    /* Ombre plus marquée au focus */
+    border: 2px solid #107B74;
+    /* Bordure personnalisée au focus */
+    outline: none;
+    /* Supprimer le contour par défaut */
+}
+
+/* Appliquer l'ombre aux champs du formulaire en mode clair */
+.light-mode #contact-form .form-control {
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1);
+    /* Ombre légère en mode clair */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.light-mode #contact-form .form-control:focus {
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.2);
+    /* Ombre plus marquée au focus */
+    border: 2px solid #107B74;
+    /* Bordure personnalisée au focus */
+    outline: none;
+    /* Supprimer le contour par défaut */
+}
+
+/* Menu =================================================*/
+header {
+    padding-top: 0.313em;
+    position: relative;
+    z-index: 2;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3.125em;
+    background: #0A192F;
+    position: relative;
+}
+
+/* Menu Desktop */
+.menu ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.menu ul li {
+    margin: 0 0.625em;
+}
+
+/* Menu mobile ouvert */
+.menu.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    top: 2.45em;
+    right: 0;
+    width: 40%;
+    height: 55vh;
+    max-height: 55vh;
+    background: #455368;
+    color: white;
+    justify-content: flex-start;
+    padding-top: 2em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Menu mobile items */
+.menu.open ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.menu.open ul li {
+    margin: 1em 0;
+}
+
+/* Position de l'icône du menu mobile */
+#mobile-menu-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    position: absolute;
+    top: 3em;
+    right: 1.25em;
+    z-index: 10000;
+}
+
+/* Style pour l'icône FontAwesome du menu mobile */
+#mobile-menu-icon i {
+    color: rgb(16, 123, 116);
+}
+
+.widgets {
+    top: 0.5em;
+}
+
+/* Icône de changement de thème */
+#theme-toggle-icon {
+    position: absolute;
+    top: 0.5em;
+    right: 0.55em;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+#theme-toggle-icon i {
+    font-size: 1.2em;
+    color: rgb(16, 123, 116);
+}
+
+/* Icône de recherche */
+#recherche {
+    position: absolute;
+    top: 0.5em;
+    right: 2em;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+#recherche i {
+    font-size: 1.2em;
+    color: rgb(16, 123, 116);
+}
+
+/* Cacher le formulaire de recherche par défaut */
+.search-form {
+    display: none;
+    position: absolute;
+    top: -0.25em;
+    right: 1.5em;
+    z-index: 10000;
+    transition: right 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Afficher le formulaire de recherche lorsque la classe 'visible' est ajoutée */
+.search-form.visible {
+    display: block;
+}
+
+/* Footer ================================================================ */
+footer {
+    padding: 1em 0;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+footer .container {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+}
+
+footer .menu-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    /* Footer en ligne sur Desktop */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+footer .menu-2 ul {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+
+footer .menu-2 ul li {
+    list-style-type: none;
+    margin: 0.625em 0.625em;
+}
+
+footer .menu-2 p {
+    margin: 0;
+    text-align: center;
+    padding: 0.625em 0;
+}
+
+footer .logos-reseaux {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.625em;
+}
+
+footer .logos-reseaux a {
+    margin: 0 0.625em;
+}
+
+footer .logos-reseaux i {
+    font-size: 1.563em;
+    color: rgb(16, 123, 116);
+    padding: 0.5em;
+}
+
+/* Erreur formulaire mail vide : Style pour le message d'erreur */
+.message-erreur {
+    display: none;
+    color: red;
+}
+
+.alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    color: white;
+    z-index: 1000;
+    display: none;
+}
+
+.alert-success {
+    background-color: green;
+}
+
+.alert-error {
+    background-color: red;
+}
+
+.close {
+    cursor: pointer;
+    float: right;
+    font-size: 20px;
+}
+
+.success-message {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.menu-2 {
+    padding-right: 0.625em;
+}
+
+.menu-2 p {
+    margin: 0;
+    text-align: right;
+}
+
+/* Flèche pour le retour vers le haut de la page */
+.fleche-hdpage i {
+    font-size: 1.875em;
+    position: fixed;
+    bottom: 1em;
+    right: 1.875em;
+}
+
+/* Mise en page petits écrans - mobiles ======================================================================= */
+
+@media screen and (max-width: 48em) {
+
+    body {
+        padding: 0.313em 0.625em;
+    }
+    .container {
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
+    /* Chaque div prend 100% de la largeur et se place l'une au-dessus de l'autre */
+    .container-portfolio, .test {
+        width: 100%;
+        z-index: 1;
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
+    /* Supprime l'espacement entre les éléments pour les petits écrans */
+    #hero {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .test {
+        /* Supprime l'image pour fusionner avec .container-portfolio */
+        display: none;
+        background-image: none;
+    }
+
+    .container-portfolio {
+        position: relative;
+        z-index: 1;
+        background-image: url('../images/bubble.webp');
+        background-position: center;
+        background-repeat: repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        min-height: 100vh;
+    }
+
+    .container-portfolio::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        opacity: 0.7;
+    }
+
+    /* Mode clair spécifique pour mobile */
+    .light-mode .container-portfolio::before {
+        /* Supprimer la couche de fond en mode clair */
+        display: none;
+        /* Couleur de fond avec opacité pour le mode clair */
+
+    }
+
+    /* Fond blanc pour les divs en mode clair sur mobile */
+    .light-mode .container-portfolio, .light-mode .container-portfolio::before {
+        background-image: url('../images/bubble_clair.webp');
+        background-color: #ffffff;
+    }
+
+        .light-mode .test {
+            background-image: url('../images/bubble_clair.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+    .light-mode .container-portfolio {
+        /*background-color: #ffffff;*/
+        background-image: url('../images/bubble_clair.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    /* Mettre les bordures en noir en mode clair pour les petits écrans */
+    .light-mode #about,
+    .light-mode #projects,
+    .light-mode #contact {
+        border-bottom: 0.1em rgb(16, 123, 116) solid;
+    }
+
+    /* Ajouter une couche de fond semi-transparente pour améliorer la lisibilité du texte */
+    .light-mode .container-portfolio::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(255, 255, 255, 0.87);
+            /* Couleur de fond avec opacité pour le mode clair */
+        z-index: 0;
+        /* Assurez-vous que cette couche est derrière le texte */
+    }
+
+    /* Assurez-vous que le texte est au-dessus de la couche de fond semi-transparente */
+    .light-mode .container-portfolio > * {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Ajouter une couche de fond semi-transparente pour améliorer la lisibilité du texte en mode sombre */
+    .container-portfolio::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(10, 25, 47, 0.87);
+            /* Couleur de fond avec opacité pour le mode sombre */
+        z-index: 0;
+        /* Assurez-vous que cette couche est derrière le texte */
+    }
+
+    /* Assurez-vous que le texte est au-dessus de la couche de fond semi-transparente en mode sombre */
+    .container-portfolio > * {
+        position: relative;
+        z-index: 1;
+    }
+
+
+    ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    li {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Menu Principal  */
+    .menu {
+        display: none;
+    }
+
+    /* Menu mobile ouvert */
+    .menu.open {
+        display: flex;
+    }
+
+    /* Style pour l'icône du menu mobile */
+    #mobile-menu-icon {
+        display: block;
+        position: absolute;
+        top: 1.5em;
+        right: 0.24em;
+    }
+
+    footer {
+        padding: 1em;
+        text-align: center;
+    }
+
+    footer .menu-2 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .menu-2 ul {
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+    }
+
+    footer .menu-2 ul li {
+        margin: 0.625em 0;
+    }
+
+    footer .menu-2 p {
+        text-align: center;
+        padding-left: 0;
+        margin-top: 0.625em;
+    }
+
+    /* Flèche retour vers le haut */
+    .fleche-hdpage i {
+        font-size: 2em;
+        position: fixed;
+        bottom: 1.25em;
+        right: 0.5em;
+    }
+}
+
+/* Mode clair ============================================================= */
+
+.light-mode {
+    background: #ffffff;
+    color: #000000;
+}
+
+.light-mode body {
+    background: #ffffff;
+}
+
+.light-mode header,
+.light-mode footer,
+.light-mode .menu-2,
+.light-mode .menu {
+    background: #ffffff;
+}
+
+.light-mode h1,
+.light-mode h2,
+.light-mode h3 {
+        color: rgb(16, 123, 116);
+}
+
+.light-mode a,
+.light-mode p
+ {
+    color: rgb(0, 0, 0);
+}
+
+.light-mode #theme-toggle-icon i,
+.light-mode #recherche i,
+.light-mode #mobile-menu-icon i,
+.light-mode footer .logos-reseaux i {
+    color: rgb(16, 123, 116);
+}
+
+/* Couleur de fond pour la section #hero en mode clair */
+.light-mode #hero {
+    background-color: #ffffff;
+}
+
+.light-mode .container-portfolio::before {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.light-mode .test {
+    background-image: url("../images/bubble_clair.webp");
+    background-color: #ffffff;
+}
+
+/* Effets de transition pour le formulaire de recherche en mode clair */
+.light-mode .search-form {
+    background-color: #fff;
+    color: #000;
+}
+
+.light-mode .search-form input {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    color: #333;
+}
+
+/* Luminosité pour le menu burger en mode clair */
+.light-mode .menu.open {
+    background: #e5e5e5;
+}
+
+/* Affichage en grille des miniatures */
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1em;
+}
+
+.project-gallery img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.light-mode .project-gallery img:hover {
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
